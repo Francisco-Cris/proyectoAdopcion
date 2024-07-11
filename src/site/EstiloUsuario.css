@@ -1,0 +1,77 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4eae4; /* Fondo color café suave */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff8f1; /* Fondo del contenedor color café muy claro */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    color: #5d4037; /* Color café oscuro */
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: #6d4c41; /* Color café mediano */
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #a1887f; /* Borde color café suave */
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #8d6e63; /* Borde color café intermedio al enfocar */
+    outline: none;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.oval-btn {
+    width: 100px;
+    height: 40px;
+    border-radius: 20px; /* Bordes redondeados para hacerlos ovalados */
+    background-color: #8d6e63; /* Fondo de los botones color café intermedio */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.oval-btn:hover {
+    background-color: #795548; /* Fondo de los botones al pasar el ratón color café más oscuro */
+}

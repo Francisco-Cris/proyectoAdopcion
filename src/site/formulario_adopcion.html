@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Adopción de Mascotas - Yachay Fundación</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f5f9;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #fafafa;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+        .container h1 {
+            color: #6d4c41;
+            margin-bottom: 20px;
+        }
+        form {
+            margin-top: 20px;
+            text-align: left;
+        }
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+        form input[type="text"],
+        form input[type="email"],
+        form input[type="tel"] {
+            width: calc(100% - 16px);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        form input[type="submit"] {
+            background-color: #6d4c41;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        form input[type="submit"]:hover {
+            background-color: #5d4037;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Formulario de Adopción de Mascotas - Yachai Fundación</h1>
+        <form id="adopcionForm" onsubmit="saveData(event)">
+            <label for="nombreAnimal">Nombre del Animal:</label>
+            <input type="text" id="nombreAnimal" name="nombreAnimal" required placeholder="Ej. Firulais">
+            
+            <label for="especieAnimal">Especie del Animal:</label>
+            <input type="text" id="especieAnimal" name="especieAnimal" required placeholder="Ej. Perro">
+            
+            <label for="razaAnimal">Raza del Animal:</label>
+            <input type="text" id="razaAnimal" name="razaAnimal" required placeholder="Ej. Labrador">
+            
+            <label for="nombreAdoptante">Nombre del Adoptante:</label>
+            <input type="text" id="nombreAdoptante" name="nombreAdoptante" required placeholder="Ej. Juan Pérez">
+            
+            <label for="emailAdoptante">Correo Electrónico del Adoptante:</label>
+            <input type="email" id="emailAdoptante" name="emailAdoptante" required placeholder="Ej. juan@example.com">
+            
+            <label for="telefonoAdoptante">Teléfono del Adoptante:</label>
+            <input type="tel" id="telefonoAdoptante" name="telefonoAdoptante" required placeholder="Ej. 123456789">
+            
+            <input type="submit" value="Generar Certificado">
+        </form>
+        <div class="footer">
+            <p>&copy; 2024 Yachai Fundación. Todos los derechos reservados.</p>
+        </div>
+    </div>
+
+    <script>
+        function saveData(event) {
+            event.preventDefault();
+
+            // Obtener los datos del formulario
+            const nombreAnimal = document.getElementById('nombreAnimal').value;
+            const especieAnimal = document.getElementById('especieAnimal').value;
+            const razaAnimal = document.getElementById('razaAnimal').value;
+            const nombreAdoptante = document.getElementById('nombreAdoptante').value;
+            const emailAdoptante = document.getElementById('emailAdoptante').value;
+            const telefonoAdoptante = document.getElementById('telefonoAdoptante').value;
+
+            // Guardar los datos en localStorage
+            localStorage.setItem('nombreAnimal', nombreAnimal);
+            localStorage.setItem('especieAnimal', especieAnimal);
+            localStorage.setItem('razaAnimal', razaAnimal);
+            localStorage.setItem('nombreAdoptante', nombreAdoptante);
+            localStorage.setItem('emailAdoptante', emailAdoptante);
+            localStorage.setItem('telefonoAdoptante', telefonoAdoptante);
+
+            // Redirigir a la página de generar certificado
+            window.location.href = 'generar_certificado.html';
+        }
+    </script>
+</body>
+</html>

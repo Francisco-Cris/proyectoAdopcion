@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificado de Adopción de Mascotas - Yachai Fundación</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f5f9;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #fafafa;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+        .container:hover {
+            transform: translateY(-5px);
+        }
+        .container h1 {
+            color: #6d4c41;
+            margin-bottom: 20px;
+        }
+        .certificate {
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px solid #6d4c41;
+            border-radius: 8px;
+            background-color: #f5f9fd;
+            text-align: left;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .certificate h2 {
+            color: #6d4c41;
+            margin-bottom: 10px;
+        }
+        .certificate p {
+            color: #555;
+            margin-bottom: 8px;
+        }
+        .terms {
+            margin-top: 20px;
+            text-align: left;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+        .terms label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .terms input[type="checkbox"] {
+            margin-right: 8px;
+        }
+        .tips {
+            margin-top: 20px;
+            text-align: left;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+        .tips h2 {
+            color: #6d4c41;
+            margin-bottom: 10px;
+        }
+        .tips ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            color: #555;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Certificado de Adopción de Mascotas</h1>
+        
+        <div class="certificate">
+            <h2>¡Felicidades por tu adopción!</h2>
+            <p>La Fundación Yachai te certifica que has adoptado a:</p>
+            <p><strong id="nombreAnimal"></strong>, un <strong id="especieAnimal"></strong> de raza <strong id="razaAnimal"></strong>.</p>
+            <p><strong>Nombre del Adoptante:</strong> <span id="nombreAdoptante"></span></p>
+            <p><strong>Correo Electrónico:</strong> <span id="emailAdoptante"></span></p>
+            <p><strong>Teléfono:</strong> <span id="telefonoAdoptante"></span></p>
+            <p>Agradecemos tu compromiso con la adopción responsable de mascotas. Recuerda que tu apoyo contribuye a nuestro trabajo para mejorar la vida de los animales necesitados.</p>
+        </div>
+
+        <div class="terms">
+            <h2>Términos y Condiciones</h2>
+            <label>
+                <input type="checkbox" id="aceptarTerminos">
+                Acepto los términos y condiciones de adopción de la Fundación Yachai.
+            </label>
+        </div>
+
+        <div class="tips">
+            <h2>Consejos para Cuidar a tu Mascota</h2>
+            <ul>
+                <li>Mantén a tu mascota bien alimentada y con agua fresca disponible.</li>
+                <li>Proporciona un espacio seguro y cómodo para tu mascota en casa.</li>
+                <li>Programa visitas regulares al veterinario para chequeos y vacunas.</li>
+                <li>Bríndale tiempo de juego y ejercicio diario.</li>
+                <li>Respeta las normativas locales sobre el cuidado y bienestar animal.</li>
+            </ul>
+        </div>
+
+        <div class="terms">
+            <button onclick="generarCertificado()" id="generarCertificadoBtn">Generar Certificado</button>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2024 Yachai Fundación. Todos los derechos reservados.</p>
+        </div>
+    </div>
+
+    <script>
+        // Cargar datos guardados del localStorage
+        document.getElementById('nombreAnimal').textContent = localStorage.getItem('nombreAnimal');
+        document.getElementById('especieAnimal').textContent = localStorage.getItem('especieAnimal');
+        document.getElementById('razaAnimal').textContent = localStorage.getItem('razaAnimal');
+        document.getElementById('nombreAdoptante').textContent = localStorage.getItem('nombreAdoptante');
+        document.getElementById('emailAdoptante').textContent = localStorage.getItem('emailAdoptante');
+        document.getElementById('telefonoAdoptante').textContent = localStorage.getItem('telefonoAdoptante');
+
+        function generarCertificado() {
+            const aceptarTerminos = document.getElementById('aceptarTerminos').checked;
+            
+            if (aceptarTerminos) {
+                // Redirigir a la página del certificado real
+                window.location.href = 'certificado_real.html';
+            } else {
+                alert('Debes aceptar los términos y condiciones para generar el certificado.');
+            }
+        }
+    </script>
+</body>
+</html>
+
